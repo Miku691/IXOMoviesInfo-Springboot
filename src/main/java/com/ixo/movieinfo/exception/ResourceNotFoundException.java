@@ -1,6 +1,7 @@
 package com.ixo.movieinfo.exception;
 
 
+
 public class ResourceNotFoundException extends RuntimeException{
 	private String resourceType;
 	private String resourceName;

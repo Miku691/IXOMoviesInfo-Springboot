@@ -2,7 +2,8 @@ package com.ixo.movieinfo.dto;
 
 
 
-import com.ixo.movieinfo.entities.IxoUserEntity;
+
+import java.time.LocalDate;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,6 +20,9 @@ public class IxoUserFamilyDto {
 	private String motherName;
 	private boolean maritalStatus;
 	private String spouseName;
+	private LocalDate marriageDate;
+	private String children;
+	private String siblings;
 	
 //	private IxoUserDto ixoUser;
 	

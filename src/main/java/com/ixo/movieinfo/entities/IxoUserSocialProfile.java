@@ -1,6 +1,5 @@
 package com.ixo.movieinfo.entities;
 
-import org.hibernate.annotations.ManyToAny;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,7 +7,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -31,6 +29,6 @@ public class IxoUserSocialProfile {
 	private Long followerCount;
 	
 	@ManyToOne
-	@JoinColumn(name="user_id")
+	@JoinColumn(name="actor_id")
 	private IxoUserEntity ixoUser;
 }

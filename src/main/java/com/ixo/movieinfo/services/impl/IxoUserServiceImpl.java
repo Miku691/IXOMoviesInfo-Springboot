@@ -53,18 +53,26 @@ public class IxoUserServiceImpl implements IxoUserService {
 
 	@Override
 	public IxoUserDto getUserByName(String userName) {
-		IxoUserEntity ixoUserEntity = this.ixoUserRepo.findByName(userName);
+		IxoUserEntity ixoUserEntity = this.ixoUserRepo.findByFirstName(userName);
 		return this.modelMapper.map(ixoUserEntity, IxoUserDto.class);
 	}
 
 	@Override
 	public IxoUserDto updateUserDetails(IxoUserDto ixoUserDto, Integer userId) {
 		IxoUserEntity ixoUserEntity = this.ixoUserRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User", "user id", userId));
+		
 		ixoUserEntity.setAge(ixoUserDto.getAge());
 		ixoUserEntity.setDateOfBirth(ixoUserDto.getDateOfBirth());
 		ixoUserEntity.setGender(ixoUserDto.getGender());
-		ixoUserEntity.setName(ixoUserDto.getName());
-		ixoUserEntity.setUserType(ixoUserDto.getUserType());
+		ixoUserEntity.setFirstName(ixoUserDto.getFirstName());
+		ixoUserEntity.setLastName(ixoUserDto.getLastName());
+		ixoUserEntity.setActorPoster(ixoUserDto.getActorPoster());
+		ixoUserEntity.setBirthPlace(ixoUserDto.getBirthPlace());
+		ixoUserEntity.setCountry(ixoUserDto.getCountry());
+		ixoUserEntity.setDateOfDeath(ixoUserDto.getDateOfDeath());
+		ixoUserEntity.setDeath(ixoUserDto.getDeath());
+		ixoUserEntity.setType(ixoUserDto.getType());
+		ixoUserEntity.setType(ixoUserDto.getType());
 		
 		IxoUserEntity savedIxoUserEntity = this.ixoUserRepo.save(ixoUserEntity);
 		return this.modelMapper.map(savedIxoUserEntity, IxoUserDto.class);

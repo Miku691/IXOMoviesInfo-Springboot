@@ -7,7 +7,7 @@ import com.ixo.movieinfo.entities.IxoUserEntity;
 public interface IxoUserRepo extends JpaRepository<IxoUserEntity, Integer>{
 
 	//custom finder method
-	IxoUserEntity findByName(String name);
+	IxoUserEntity findByFirstName(String name);
 	
 	
 }

@@ -1,6 +1,5 @@
 package com.ixo.movieinfo.dto;
 
-import com.ixo.movieinfo.entities.IxoUserEntity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
